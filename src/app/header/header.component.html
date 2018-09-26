@@ -1,0 +1,55 @@
+<p>
+  header works!
+</p>
+<!--<button (click)="testMe()">Test me</button>-->
+
+<!--c3ex1-->
+<!--<div class="container" [ngSwitch]="myVar">-->
+  <!--<div *ngSwitchCase="'A'">Var is A</div>-->
+  <!--<div *ngSwitchCase="'B'">Var is B</div>-->
+  <!--<div *ngSwitchDefault>Var is something else</div>-->
+<!--</div>-->
+
+<!--c3ex2-->
+<!--to work on enter, we need form tags-->
+<!--<form>-->
+<!--<div class="ui input">-->
+  <!--<input type="text" name="color" value="{{color}}" #colorInput>-->
+<!--</div>-->
+
+<!--<span [ngStyle]="{'color':colorInput.value}">-->
+  <!--{{colorInput.value}} text-->
+<!--</span>-->
+<!--</form>-->
+
+<!--c3ex3-->
+<!--<div [ngClass]="{bordered: false}">This is never bordered</div>-->
+<!--<div [ngClass]="{bordered: true}">This is always bordered</div>-->
+
+<!--<div [ngClass]="{bordered:isBordered}">-->
+  <!--Using object literal. Border {{isBordered?"ON":"OFF"}}-->
+<!--</div>-->
+
+<!--<div class="base" [ngClass]="['blue', 'round']">-->
+  <!--Thiw will always have a blue background and round corners-->
+<!--</div>-->
+
+<!--c3ex4-->
+<input type="text" name="city" [(ngModel)]="city" >
+
+<div class="ui list" *ngFor="let c of cities; let num = index">
+  <div class="item">{{num + 1}}. {{c}}</div>
+</div>
+
+
+<div>
+  <label>With reference variable</label>
+  <input type="text" #add/>
+  <button (click)="addValue(add.value);add.value=''">Add</button>
+</div>
+
+<div>
+  <label>With ngModel</label>
+  <input type="text" [(ngModel)]="city"/>
+  <button (click)="addValue(city);city=''">Add</button>
+</div>

@@ -1,0 +1,32 @@
+<!--<p>-->
+  <!--hero works!-->
+<!--</p>-->
+<!--<div *ngFor="let i of [0, 1, 2, 3, 4, 5]">-->
+  <!--<button (click)='gotoHero(i)'>Press Me!! -> {{i}}</button>-->
+<!--</div>-->
+
+
+<!--NU MERGE-->
+<!--<form #heroForm="ngForm" novalidate (ngSubmit)="onSubmit()">-->
+  <!--<div>-->
+    <!--Hero Power-->
+    <!--<input #power="ngModel" [(ngModel)]="hero.power" minlength="3">-->
+    <!--<div *ngIf="power.errors && (power.dirty && power.touched)">-->
+      <!--<div [hidden]="!power.errors.minlength">Minimum 3 characters required</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--<button [disabled]="!heroForm.form.valid">Submit</button>-->
+<!--</form>-->
+<form novalidate [formGroup]="form">
+  <input type="text" name="name" formControlName="name" [(ngModel)]="name">
+  <!--<input type="text" name="name">-->
+  <input type="text" name="power">
+  <input type="text" name="gender">
+  <!--<input type="button" (onSubmit)="submitMe()"/>-->
+  <button (click)="submitMe()">Submit</button>
+</form>
+
+
+<span appMyHighlight>Lalala</span>
+
+<router-outlet></router-outlet>
